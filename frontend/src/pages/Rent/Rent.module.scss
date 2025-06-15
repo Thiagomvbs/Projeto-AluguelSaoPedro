@@ -1,0 +1,40 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1.2rem;
+    margin-left: 1rem;
+
+    h2{
+        font-size: 2rem;
+    }
+
+    h5{
+        text-transform: uppercase;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    p{
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .Container_Conteudo{
+        margin-left: 1.5rem;
+        h6{
+            font-size: 16px;
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+        p{
+            font-size: 16px;
+            margin: 5px 0;
+        }
+    }
+
+    ul{
+        display: flex;
+        gap: 15px;
+    }
+}

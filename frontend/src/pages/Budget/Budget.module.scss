@@ -1,0 +1,104 @@
+.OrcamentoPage {
+    width: 100%;
+    
+    h2, p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 8px;
+    }
+
+    .Container {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: center;
+        gap: 30px; 
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+        width: 100%;
+        min-width: 0; 
+
+        .ProdutosSelecionados {
+            flex: 1;
+            min-width: 350px; 
+            max-width: 50%; 
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-sizing: border-box; 
+            h3 {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .CartItems {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+        }
+
+        .OrcamentoForm {
+            flex: 1;
+            min-width: 300px; 
+            max-width: 50%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+
+            h3 {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .OrcamentoPage {
+        padding: 10px;
+        
+    }
+
+    .Container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        
+    }   
+
+    .ProdutosSelecionados{
+        display: none;
+    }
+
+    .OrcamentoForm {
+        max-width: 100%; 
+        width: 100%;
+    }
+}

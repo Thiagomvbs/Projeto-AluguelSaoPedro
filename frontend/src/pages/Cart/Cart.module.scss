@@ -1,0 +1,109 @@
+.ContainerCart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .CartPage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+        margin-top: 10px;
+        width: auto;
+        border: 1px solid #bebebe;
+        border-radius: 12px;
+    
+        h2{
+            font-size: 2rem;
+        }
+    
+        .CartItems{
+            width: 100%;
+            flex-grow: 1;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+    }
+
+    .CartButton{
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 1.5rem 0 1rem 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 17px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #9ca47f;
+        
+
+        .CartConfirm{
+            text-decoration: none;
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+            color: ghostwhite;
+        }
+    }
+
+    .CartButton:hover .CartConfirm{
+        color: ghostwhite;
+    }
+
+    .CartButton::before,
+    .CartButton::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .CartButton::before{
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    .CartButton:hover::before{
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Container {
+        flex-direction: column;
+        gap: 20px; // Reduz o espaçamento entre os elementos para caber melhor
+        padding: 20px; // Reduz o padding para melhorar o ajuste na tela
+    }
+
+    .ProdutosSelecionados {
+        width: 90%; // Ocupa quase toda a largura da tela
+        max-width: 100%; // Garante que não fique cortado
+        padding: 10px; // Reduz o padding para não ultrapassar
+    }
+
+    .CartItems {
+        width: 100%; // Garante que os itens ocupem todo o espaço disponível
+    }
+
+    .CartPage {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+

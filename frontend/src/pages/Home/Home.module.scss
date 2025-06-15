@@ -1,0 +1,75 @@
+.Container {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0 1.5rem;
+    gap: 2.5rem;
+    opacity: 0; /* Inicia invisível */
+    transform: translateY(20px); /* Começa um pouco deslocado para baixo */
+    animation: fadeIn 0.8s ease-out forwards; /* Ativa a animação */
+
+    img {
+        width: 50%;
+        max-width: 500px;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: transform 0.3s ease-in-out; /* Animação ao passar o mouse */
+
+        &:hover {
+            transform: scale(1.05); /* Efeito de leve zoom ao passar o mouse */
+        }
+    }
+
+    .Descricao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        p {
+            font-size: 1.4rem;
+            transition: color 0.3s ease; /* Suaviza mudança de cor */
+        }
+
+        &:hover p {
+            color: #555; /* Muda levemente a cor do texto ao passar o mouse */
+        }
+    }
+}
+
+/* Animação Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    .Container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        transition: all 0.5s ease-in-out; /* Transição mais suave */
+
+        img {
+            width: 80%;
+            max-width: 250px;
+            height: auto;
+        }
+
+        .Descricao {
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

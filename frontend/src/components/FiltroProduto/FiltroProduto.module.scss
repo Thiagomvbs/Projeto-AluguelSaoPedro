@@ -1,0 +1,38 @@
+.Container{
+    border: 2px solid #e9e3e3;
+    padding: 12px;
+    width: 250px;
+    margin-left: 10px;
+    border-radius:10px;
+    
+
+    .Filtro{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-bottom: 2px solid #e9e3e3;
+    }
+
+    ul{
+        margin: 5px 0 0 5px;
+
+        li{
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 5px 0;
+
+            label{
+                input{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        li:hover{
+            color: #38940d;
+        }
+    }
+
+}
+

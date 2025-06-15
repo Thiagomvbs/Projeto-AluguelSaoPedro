@@ -1,0 +1,51 @@
+.Rodape{
+    margin-top: 2.5rem;
+    background-color: #9ca47f;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .8rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    .Copyright{
+        font-size: 12px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    ul{
+        padding: 0;
+        margin: 0 1.5rem;
+        
+        li{
+            display: inline-block;
+            margin: 0px 5px;
+
+
+            i{
+                width: 36px;
+                height: 36px;
+                display: inline-block;
+                text-align: center;
+                line-height: 36px !important;
+                background-color: #fff;
+                border-radius: 50%;
+                color: #363e50;
+                transition: all 0.5s;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #363e50;
+                    color: #fff;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

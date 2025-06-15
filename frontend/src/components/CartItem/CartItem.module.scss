@@ -1,0 +1,109 @@
+.Produto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+   
+    .ProdutoImagem{
+        width: 120px;
+        height: 120px;
+        margin-right: 15px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    &.sidebar .ProdutoImagem{
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+        object-fit: cover;
+        border-radius: 5px;  
+    }
+
+    &.cartPage .ProdutoImagem{
+        width: 120px;
+        height: 120px;
+        margin-right: 15px;
+        object-fit: cover;
+        border-radius: 5px;  
+
+    }
+
+    .QuantidadeContainer{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 5px;
+
+        .ButtonQuantidade {
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #333;
+            transition: .3s;
+            font-size: 1rem;
+            padding: 2px;
+        }
+
+        .InputQuantidade{
+            padding: 10px;
+            width: 100px;
+        }
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            
+        }
+    }
+    .ProdutoInfo {
+        padding: 0 35px 0 10px;
+        h3{
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;  
+        }
+
+        .Quantidade {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+    }
+
+    .ButtonRemove{
+        color: #d83232;
+        font-size: 1.4rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: .3s ;
+        padding: 3px;
+        
+    }
+
+    .ButtonRemove:hover{
+        background: #d83232;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    .ProdutoImagem{
+        display: none;
+    }
+
+    .QuantidadeContainer{
+        .InputQuantidade{
+            width: 70%;
+        }
+    }
+}

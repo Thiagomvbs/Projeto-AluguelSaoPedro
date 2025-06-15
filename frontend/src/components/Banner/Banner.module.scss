@@ -1,0 +1,28 @@
+.BannerArea{
+    height: 40vh;
+    background: linear-gradient(rgba(240, 240, 240, 0.144), rgba(255, 255, 255, 0.366)), url("https://static.wixstatic.com/media/960961_b2d3a4f0d5d24d01bee1a6641ebf155f~mv2.jpg/v1/fill/w_720,h_478,al_c,q_80,enc_avif,quality_auto/960961_b2d3a4f0d5d24d01bee1a6641ebf155f~mv2.jpg");
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+    .Container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 1.6rem;
+    }
+
+    .Titulo{
+        text-transform: uppercase;
+        font-size: 4rem;
+        margin: 0;
+        color: azure;
+    }
+
+    p{
+        color: azure;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,143 @@
+.Link {
+    text-align: center;
+    background: #9ca47f;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        color: #fff;
+    }
+
+    .NavItem {
+        padding: 0;
+        margin: 0;
+        display: flex; // Garante que os itens fiquem em linha
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 2rem;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #fff;
+                transition: width 0.3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.5rem;
+                color: #fff;
+
+                &:visited {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .LinkMobile{
+        display: none;
+    }
+
+    .ButtonCart {
+        cursor: pointer;
+        background: none;
+        outline: none;
+        border: none;
+    }
+
+    .Container {
+        position: relative;
+    }
+
+    .IconCart {
+        color: #fff;
+        font-size: 1.7rem;
+    }
+
+    .Count {
+        position: absolute;
+        color: #000;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 17px;
+        height: 20px;
+        right: -5px;
+        top: 60%;
+    }
+
+    .ButtonBurguer {
+        display: none; // Esconde o botão do menu em telas maiores
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Link {
+        position: relative; // Garante que o menu seja posicionado corretamente
+
+        .NavItem {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #9ca47f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Alinha os itens no topo */
+            padding-top: 50px; /* Espaço no topo */
+            transform: translateX(100%); /* Começa fora da tela */
+            transition: transform 0.3s ease-in-out; 
+            z-index: 100;
+
+            &.open {
+                transform: translateX(0);
+                right: 0; // Mostra o menu ao definir right como 0
+            }
+
+            li {
+                margin: 1rem 0; // Espaçamento entre os itens do menu
+                display: block; // Garante que os itens fiquem em coluna
+            }
+        }
+
+        .LinkMobile{
+            display: block;
+        }
+
+        .ButtonCart, .Count {
+            display: none;
+             // Esconde o carrinho em telas menores
+        }
+
+        .ButtonBurguer {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 999;
+
+            .Close {
+                display: block;
+            }
+        }
+    }
+}

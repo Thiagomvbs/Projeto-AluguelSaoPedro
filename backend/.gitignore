@@ -1,0 +1,22 @@
+# Arquivos e diretórios padrão do Django
+*.pyc
+__pycache__/
+db.sqlite3
+/static/
+media/
+
+# Arquivos de configuração locais
+.env
+
+# Diretórios do ambiente virtual
+venv/
+env/
+.venv/
+.env/
+
+# Arquivos do IDE
+.idea/
+.vscode/
+
+# Arquivos de log
+*.log
