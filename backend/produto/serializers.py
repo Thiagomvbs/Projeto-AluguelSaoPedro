@@ -11,6 +11,6 @@ class ProdutoEmailSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     nome = serializers.CharField()
     descricao = serializers.CharField()
-    imagem = serializers.URLField(required=False, allow_blank=True)  # Aceita URLs ou pode ser vazio
+    imagem = serializers.URLField(required=False, allow_blank=True)  
     categoria = serializers.CharField()
-    quantidade = serializers.IntegerField()  # Adicionado para o e-mai
+    quantidade = serializers.IntegerField()  

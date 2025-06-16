@@ -1,17 +1,22 @@
-# Usando imagem oficial do Python
-FROM python:3.10
+FROM python:3.11-slim
 
-# Criar diretório de trabalho
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
-# Copiar arquivos do projeto
-COPY . /app
 
-# Instalar dependências
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    default-libmysqlclient-dev \
+    pkg-config \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expor a porta 8000
-EXPOSE 8000
+COPY . .
 
-# Comando para rodar a aplicação
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "setup.wsgi:application"]
+
+CMD ["gunicorn", "setup.wsgi:application", "--bind", "0.0.0.0:8000"]

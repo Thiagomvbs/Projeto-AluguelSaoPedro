@@ -11,7 +11,7 @@ class EmailSerializer(serializers.Serializer):
     email = serializers.EmailField()
     enderecoEntrega = serializers.CharField(required=False, allow_blank=True)  
     bairroEntrega = serializers.CharField()
-    dataEvento = serializers.DateField()
+    dataEvento = serializers.DateField(input_formats=["%d/%m/%Y"])
     infoExtras = serializers.CharField(required=False, allow_blank=True)  
     produtos = serializers.ListField(child=ProdutoEmailSerializer())  
 

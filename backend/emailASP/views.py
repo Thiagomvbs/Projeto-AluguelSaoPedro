@@ -15,14 +15,14 @@ def enviar_email(request):
     if request.method != 'POST':
         return JsonResponse({'message': 'Método inválido, use POST.'}, status=405)
     
-    # Usando o serializer para validar os dados
+    
     serializer = EmailSerializer(data=request.data)
     
     if not serializer.is_valid():
         print(serializer.errors)
         return JsonResponse({'message': 'Dados inválidos ou incompletos.'}, status=400)
     
-    # Extraindo os dados validados do serializer
+    
     email_cliente = serializer.validated_data.get('email')
     nome = serializer.validated_data.get('nome')
     endereco = serializer.validated_data.get('endereco')
@@ -67,7 +67,6 @@ def enviar_email(request):
     for produto in produtos:
         content += f"\n🔹 {produto.get('nome')} - Quantidade: {produto.get('quantidade')}"
 
-    # Enviar e-mail usando SendGrid
     try:
         sg = sendgrid.SendGridAPIClient(api_key=api_key)
         from_email = Email("thiagomonteirovbs@gmail.com")  # E-mail verificado no SendGrid

@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "start": "WATCHPACK_POLLING=true react-scripts start",
     "lint": "eslint .",
     "preview": "vite preview"
   },
