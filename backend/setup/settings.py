@@ -20,7 +20,7 @@ USE_RAILWAY = os.environ.get('USE_RAILWAY', 'False') == 'True'
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 CORS_ALLOW_ALL_ORIGINS = True
 ALLOWED_HOSTS = ['*']
 

@@ -25,7 +25,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./backend:/app
+      - ./backend/media:/app/media
     ports:
       - "8000:8000"  
     networks:
@@ -51,6 +51,7 @@ services:
       - backend
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./backend/media:/app/media 
     ports:
       - "80:80"
     networks:

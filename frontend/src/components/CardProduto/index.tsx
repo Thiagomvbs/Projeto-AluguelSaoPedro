@@ -11,8 +11,6 @@ const CardProduto = ({pagina, busca, categoriaSelecionada}: {pagina: number, bus
     const {produtos, totalCount} = useProdutos(pagina, busca, categoriaSelecionada);
     const {adicionarCarrinho} = useCarrinhoContext();
 
-    console.log("Categorias retornadas:", produtos.map(p => p.categoria));
-
     const produtosFiltrados = produtos.filter((produto) => {
         if (categoriaSelecionada.length === 0) return true;
         return categoriaSelecionada.includes(produto.categoria.toUpperCase());
@@ -30,12 +28,14 @@ const CardProduto = ({pagina, busca, categoriaSelecionada}: {pagina: number, bus
         adicionarCarrinho({ ...produto, quantidade: 1 });
     };
 
+
+    const img = `https://raw.githubusercontent.com/Thiagomvbs/Projeto-AluguelSaoPedro/refs/heads/main/backend/staticfiles/media`
     return (
            <section className={estilos.ProdutoContainer}>
                 {produtosFiltrados.map((produto) => (
                     <div key={produto.id} className={estilos.ProdutoCard}>
                     <div>
-                        <img src={produto.imagem} alt={produto.nome} />
+                        <img src={""+console.log(`${img}${produto.imagem.substring(62)}`)} alt={produto.nome} />
                     </div>
                     <div className={estilos.ProdutoInfo}>
                         <h3>{produto.nome}</h3>
