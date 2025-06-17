@@ -33,8 +33,6 @@ EMAIL_HOST_USER = "apikey"
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 DEFAULT_FROM_EMAIL = SENDGRID_FROM_EMAIL
 
-print(os.getenv('DB_USER'))
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -184,5 +182,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "*",
 ]

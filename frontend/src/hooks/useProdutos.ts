@@ -3,7 +3,11 @@ import axios from "axios";
 import { IPaginacao } from "../interfaces/IPaginacao";
 import { IProduto } from "../interfaces/IProdutos";
 
-const useProdutos = (pagina: number, busca: string, categoriasSelecionadas: string[]) => {
+const useProdutos = (
+  pagina: number,
+  busca: string,
+  categoriasSelecionadas: string[]
+) => {
   const [produtos, setProdutos] = useState<IProduto[]>([]);
   const [totalCount, setTotalCount] = useState(0);
 
@@ -20,7 +24,7 @@ const useProdutos = (pagina: number, busca: string, categoriasSelecionadas: stri
 
     params.append("page", pagina.toString());
 
-    const url = `http://127.0.0.1:8000/produtos/?${params.toString()}`;
+    const url = `https://projeto-aluguelsaopedro-production.up.railway.app/produtos/?${params.toString()}`;
 
     axios
       .get<IPaginacao<IProduto>>(url)
